@@ -1,0 +1,25 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+     "Name": "dtr.cucloud.net/cs/jenkins:latest"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "8080"
+    }
+  ],
+  "Authentication": {
+      "Bucket": "cu-DEPT-dockercfg",
+      "Key": ".dockercfg"
+  },
+  "Volumes": [
+    {
+      "HostDirectory": "/var/jenkins_home",
+      "ContainerDirectory": "/var/jenkins_home"
+    },
+    {
+      "HostDirectory": "/var/run/docker.sock",
+      "ContainerDirectory": "/var/run/docker.sock"
+    }
+  ]
+}
